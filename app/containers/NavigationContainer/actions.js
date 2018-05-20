@@ -5,11 +5,27 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  REQUEST_TOPICS,
+  REQUEST_TOPICS_FAILED,
+  REQUEST_TOPICS_SUCCEEDED,
 } from './constants';
 
-export function defaultAction() {
+export function requestTopics() {
   return {
-    type: DEFAULT_ACTION,
+    type: REQUEST_TOPICS,
+  };
+}
+
+export function requestTopicsSucceeded(topics) {
+  return {
+    type: REQUEST_TOPICS_SUCCEEDED,
+    topics,
+  };
+}
+
+export function requestTopicsFailed(message) {
+  return {
+    type: REQUEST_TOPICS_FAILED,
+    message,
   };
 }
